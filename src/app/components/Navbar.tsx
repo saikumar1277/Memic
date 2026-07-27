@@ -11,6 +11,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import {
   Sheet,
@@ -44,12 +45,31 @@ const Navbar = () => {
           <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="#features"
+                <NavigationMenuTrigger
                   className={`${navigationMenuTriggerStyle()} text-gray-700 text-xs rounded-xl hover:text-gray-900 hover:bg-gray-50 transition-colors`}
                 >
                   Features
-                </NavigationMenuLink>
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[200px] gap-1 p-2">
+                    <li>
+                      <NavigationMenuLink
+                        href="#ats-score"
+                        className="block rounded-md p-2 text-sm text-gray-700 hover:bg-gray-50"
+                      >
+                        Check ATS score
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink
+                        href={SIGNUP_URL}
+                        className="block rounded-md p-2 text-sm text-gray-700 hover:bg-gray-50"
+                      >
+                        Build resume
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
